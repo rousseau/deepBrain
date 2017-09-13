@@ -2,11 +2,11 @@
 
 ### Table of Contents
 
-0. [Introduction](#introduction)
-0. [Citation](#citation)
-0. [Dependencies](#dependencies)
-0. [Testing](#testing)
-0. [Training](#training)
+1. [Introduction](#introduction)
+1. [Citation](#citation)
+1. [Dependencies](#dependencies)
+1. [Testing](#testing)
+1. [Training](#training)
 
 ### 1. Introduction
 This repository contains the SRCNN3D model described in the paper "Brain MRI super-resolution using deep 3D convolutional networks" (http://ieeexplore.ieee.org/abstract/document/7950500/).
@@ -84,6 +84,7 @@ Or using this function:
 python generate_solver.py -l 0.0001 -s Adam
 ```
 l : learning rate
+
 s : optimization method
 
 #### Step 3 : Training network using Caffe
