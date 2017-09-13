@@ -63,9 +63,11 @@ f : HR reference image
 
 o : HDF5 file which contains the patches of HR reference image
 
-s : scale factor
+s : scale factors
 
 other arguments see : 
 ```
 python generate_hdf5.py -h
 ```
+
+
