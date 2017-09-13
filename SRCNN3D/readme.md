@@ -50,7 +50,7 @@ m : trained parameters of network stored in caffemodel file
 
 n : deploy network
 
-other arguments see : 
+Other arguments see : 
 ```
 python demo_SRCNN3D.py -h
 ```
@@ -67,7 +67,7 @@ o : HDF5 file which contains the patches of HR reference image
 
 s : scale factors
 
-other arguments see : 
+Other arguments see : 
 ```
 python generate_hdf5.py -h
 ```
