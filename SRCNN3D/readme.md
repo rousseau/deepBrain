@@ -75,14 +75,14 @@ python generate_hdf5.py -h
 #### Step 2 : Creating a solver txt file for Caffe
 We can edit directly the solver text file at *model/SRCNN3D_solver.prototxt*
 
-For futher information about [Caffe solver](http://caffe.berkeleyvision.org/tutorial/solver.html)
+For further information about Caffe solver at [here](http://caffe.berkeleyvision.org/tutorial/solver.html)
 
 Or using this function:
 ```
 python generate_solver.py 
 ```
 
-#### Step 3 : Training network using Caffe
+#### Step 3 : Training network using Caffe
 ```
 caffe train --solver model/SRCNN3D_solver.prototxt
 ```
