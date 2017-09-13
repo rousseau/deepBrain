@@ -34,6 +34,7 @@ sys.path.insert(0, './utils')
 from utils3d import shave3D, imadjust3D, modcrop3D
 from store2hdf5 import store2hdf53D
 from patches import array_to_patches
+from SRCNN3D_net import SRCNN3D, SRCNN3D_deploy
 
 import argparse
 
@@ -44,15 +45,17 @@ if __name__ == '__main__':
     parser.add_argument('-f', '--reference', help='Reference image filename (required)', type=str, action='append', required = True)
     parser.add_argument('-o', '--output', help='Name of output HDF5 files (required)', type=str, action='append', required = True)
     parser.add_argument('-s', '--scale',  help='Scale factor (default = 2,2,2). Append mode: -s 2,2,2 -s 3,3,3 ', type=str, action='append')
-    parser.add_argument('--stride', help='Indicates step size at which extraction shall be performed (default=14)', type=int, default=10)
+    parser.add_argument('--stride', help='Indicates step size at which extraction shall be performed (default=10)', type=int, default=10)
     parser.add_argument('-b','--batch', help='Indicates batch size for HDF5 storage', type=int, default=256)
-    parser.add_argument('-p','--patchsize', help='Indicates input patch size for extraction', type=int, default=21)
+    parser.add_argument('-p','--patchsize', help='Indicates input patch size for extraction', type=int, default=33)
     parser.add_argument('-m', '--model', help='Models for training : 9-1-5, 9-3-5, 9-5-5. (default=9-1-5)', type=str, default='9-1-5')   
     parser.add_argument('--border', help='Border to remove (default=10,10,0)', type=str, default='10,10,0')
     parser.add_argument('--order', help='Order of spline interpolation (default=3) ', type=int, default=3)
     parser.add_argument('--samples', help='Indicates limit of samples in HDF5 file (optional)', type=int)
     parser.add_argument('--sigma', help='Standard deviation (sigma) of Gaussian blur (default=1)', type=int, default=1)
     parser.add_argument('-t', '--text', help='Name of a text (.txt) file which contains HDF5 file names (default: train.txt)', type=str, default='train.txt')
+    parser.add_argument('-n', '--netname', help='Name of train netwotk protocol (default=SRCNN3D_net.prototxt)', type=str, default='SRCNN3D_net.prototxt')
+    parser.add_argument('-d', '--deployname', help='Name of deploy files in order to deploy the parameters of SRCNN3D_net without reading HDF5 files (default=SRCNN3D_deploy.prototxt)', type=str, default='SRCNN3D_deploy.prototxt')
     
     args = parser.parse_args()
     
@@ -64,10 +67,13 @@ if __name__ == '__main__':
     PatchSize = args.patchsize
     if args.model == '9-1-5':
         LabelSize = PatchSize - (9-1) - (5-1)
+        kernel=(9,1,5)
     elif args.model == '9-3-5':
         LabelSize = PatchSize - (9-1) - (3-1) - (5-1)
+        kernel=(9,3,5)
     elif args.model == '9-5-5':    
         LabelSize = PatchSize - (9-1) - (5-1) - (5-1)
+        kernel=(9,5,5)
     else:
         raise AssertionError, 'This model is not supported !'    
     padding = int(np.abs(PatchSize - LabelSize)/float(2))
@@ -94,6 +100,7 @@ if __name__ == '__main__':
         
     # Writing a text (.txt) file which contains HDF5 file names 
     OutFile = open(str(args.text), "w")
+    
     # ============ Processing images ===========================================
 
     for i in range(0,len(args.reference)):
@@ -199,3 +206,8 @@ if __name__ == '__main__':
         # Writing a text file which contains HDF5 file names 
         OutFile.write(hdf5name)
         OutFile.write('\n')
+        
+    # =========== Wrinting SRCNN3D net ==================
+    with open(args.netname , 'w') as f:
+        f.write(str(SRCNN3D(args.text, args.batch, kernel=kernel)))
+    SRCNN3D_deploy(args.netname, args.deployname)
