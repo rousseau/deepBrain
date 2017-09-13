@@ -22,6 +22,7 @@ If you use these models in your research, please cite:
   }
 ```
 ### Testing
-'''
+
+```
 python demo_SRCNN3D.py -t ($Dataset)/KKI2009-01-MPRAGE_LR.nii.gz -r KKI2009-01-MPRAGE_LR_SRCNN3D.nii.gz -m SRCNN3D_iter_470000.caffemodel -n SRCNN3D_deploy.prototxt
-'''
+```
