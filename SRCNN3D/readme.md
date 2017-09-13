@@ -42,7 +42,7 @@ h5py
 
 ```
 cd Test
-python demo_SRCNN3D.py -t ($Dataset)/KKI2009-01-MPRAGE_LR.nii.gz -r KKI2009-01-MPRAGE_LR_SRCNN3D.nii.gz -m caffe_model/SRCNN3D_iter_470000.caffemodel -n caffe_model/SRCNN3D_deploy.prototxt
+python demo_SRCNN3D.py -t ($Dataset)/KKI2009-01-MPRAGE_LR.nii.gz -r KKI2009-01-MPRAGE_LR_SRCNN3D.nii.gz -m caffe_model/SRCNN3D_iter_470000.caffemodel -n caffe_model/SRCNN3D_deploy.prototxt -g True
 ```
 t : testing LR image
 
@@ -51,6 +51,8 @@ r : SR image result
 m : trained parameters of network stored in caffemodel file
 
 n : deploy network
+
+g : True (GPU mode)
 
 Other arguments see : 
 ```
