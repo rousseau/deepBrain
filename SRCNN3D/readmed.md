@@ -23,20 +23,15 @@ If you use these models in your research, please cite:
   }
 ```
 ### Dependencies
-For reading NIFTI data:
-```
+#### For reading NIFTI data:
 [SimpleITK](https://itk.org/Wiki/SimpleITK/GettingStarted)
-```
-For training
-```
+#### For training
 [Caffe](https://github.com/BVLC/caffe/)
 h5py
-```
-For GPU testing:
-```
+#### For GPU testing:
 [Lasagne](https://lasagne.readthedocs.io/en/latest/)
 [cudnn](https://developer.nvidia.com/cudnn)
-```
+
 ### Testing
 
 ```
