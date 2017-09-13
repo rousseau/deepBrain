@@ -5,11 +5,13 @@
 0. [Introduction](#introduction)
 0. [Citation](#citation)
 0. [Dependencies](#dependencies)
+0. [Testing](#testing)
+0. [Training](#training)
 
-### Introduction
+### 1. Introduction
 This repository contains the SRCNN3D model described in the paper "Brain MRI super-resolution using deep 3D convolutional networks" (http://ieeexplore.ieee.org/abstract/document/7950500/).
 
-### Citation
+### 2. Citation
 
 If you use these models in your research, please cite:
 ```
@@ -22,7 +24,7 @@ If you use these models in your research, please cite:
       organization={IEEE}
   }
 ```
-### Dependencies
+### 3. Dependencies
 
 #### For reading and writing NIFTI data:
 [SimpleITK](https://itk.org/Wiki/SimpleITK/GettingStarted)
