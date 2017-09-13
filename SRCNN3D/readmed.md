@@ -4,6 +4,7 @@
 
 0. [Introduction](#introduction)
 0. [Citation](#citation)
+0. [Dependencies](#dependencies)
 
 ### Introduction
 This repository contains the SRCNN3D model described in the paper "Brain MRI super-resolution using deep 3D convolutional networks" (http://ieeexplore.ieee.org/abstract/document/7950500/).
@@ -21,8 +22,24 @@ If you use these models in your research, please cite:
       organization={IEEE}
   }
 ```
+### Dependencies
+For reading NIFTI data:
+```
+[SimpleITK](https://itk.org/Wiki/SimpleITK/GettingStarted)
+```
+For training
+```
+[Caffe](https://github.com/BVLC/caffe/)
+h5py
+```
+For GPU testing:
+```
+[Lasagne](https://lasagne.readthedocs.io/en/latest/)
+[cudnn](https://developer.nvidia.com/cudnn)
+```
 ### Testing
 
 ```
 python demo_SRCNN3D.py -t ($Dataset)/KKI2009-01-MPRAGE_LR.nii.gz -r KKI2009-01-MPRAGE_LR_SRCNN3D.nii.gz -m caffe_model/SRCNN3D_iter_470000.caffemodel -n caffe_model/SRCNN3D_deploy.prototxt
 ```
+### Training
