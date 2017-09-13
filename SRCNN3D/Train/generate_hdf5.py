@@ -31,6 +31,7 @@ import sys
 from ast import literal_eval as make_tuple
 
 sys.path.insert(0, './utils')
+sys.path.insert(0, './model')
 from utils3d import shave3D, imadjust3D, modcrop3D
 from store2hdf5 import store2hdf53D
 from patches import array_to_patches
@@ -53,9 +54,9 @@ if __name__ == '__main__':
     parser.add_argument('--order', help='Order of spline interpolation (default=3) ', type=int, default=3)
     parser.add_argument('--samples', help='Indicates limit of samples in HDF5 file (optional)', type=int)
     parser.add_argument('--sigma', help='Standard deviation (sigma) of Gaussian blur (default=1)', type=int, default=1)
-    parser.add_argument('-t', '--text', help='Name of a text (.txt) file which contains HDF5 file names (default: train.txt)', type=str, default='train.txt')
-    parser.add_argument('-n', '--netname', help='Name of train netwotk protocol (default=SRCNN3D_net.prototxt)', type=str, default='SRCNN3D_net.prototxt')
-    parser.add_argument('-d', '--deployname', help='Name of deploy files in order to deploy the parameters of SRCNN3D_net without reading HDF5 files (default=SRCNN3D_deploy.prototxt)', type=str, default='SRCNN3D_deploy.prototxt')
+    parser.add_argument('-t', '--text', help='Name of a text (.txt) file which contains HDF5 file names (default: model/train.txt)', type=str, default='model/train.txt')
+    parser.add_argument('-n', '--netname', help='Name of train netwotk protocol (default=model/SRCNN3D_net.prototxt)', type=str, default='model/SRCNN3D_net.prototxt')
+    parser.add_argument('-d', '--deployname', help='Name of deploy files in order to deploy the parameters of SRCNN3D_net without reading HDF5 files (default=model/SRCNN3D_deploy.prototxt)', type=str, default='model/SRCNN3D_deploy.prototxt')
     
     args = parser.parse_args()
     
