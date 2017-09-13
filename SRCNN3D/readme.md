@@ -79,8 +79,10 @@ For further information about Caffe solver at [here](http://caffe.berkeleyvision
 
 Or using this function:
 ```
-python generate_solver.py 
+python generate_solver.py -l 0.0001 -s Adam
 ```
+l : learning rate
+s : optimization method
 
 #### Step 3 : Training network using Caffe
 ```
