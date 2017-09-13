@@ -38,7 +38,7 @@ h5py
 
 [cudnn](https://developer.nvidia.com/cudnn)
 
-### Testing
+### 4. Testing
 
 ```
 cd Test
@@ -57,7 +57,7 @@ Other arguments see :
 python demo_SRCNN3D.py -h
 ```
 
-### Training
+### 5. Training
 #### Step 1 : Generating HDF5 files of training data
 ```
 cd Train
