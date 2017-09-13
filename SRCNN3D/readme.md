@@ -70,4 +70,12 @@ other arguments see :
 python generate_hdf5.py -h
 ```
 
+#### Step 2 : Creating a solver txt file for Caffe
+We can edit directly the solver text file at *model/SRCNN3D_solver.prototxt*
 
+For futher information about [Caffe solver](http://caffe.berkeleyvision.org/tutorial/solver.html)
+
+Or using this function:
+```
+python generate_solver.py 
+```
