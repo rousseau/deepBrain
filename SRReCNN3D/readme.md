@@ -66,5 +66,19 @@ Testing multimodal 10-layers residual network (Multimodal 10L-ReCNN) with isotro
 
 ```
 cd Multimodal/Test
-python demo_multiSRReCNN3D.py -t ($Dataset)/KKI2009-01-MPRAGE_LR.nii.gz -f ($Dataset)/KKI2009-01-T2w.nii.gz -r KKI2009-01-MPRAGE_LR_MonoSRReCNN3D.nii.gz -m caffe_model/MultiSRReCNN3D_10Layers_IsoScalex2.caffemodel -n caffe_model/MultiSRReCNN3D_10L_deploy.prototxt -l 10 -s 2,2,2
+python demo_multiSRReCNN3D.py -t ($Dataset)/KKI2009-01-MPRAGE_LR.nii.gz -f ($Dataset)/KKI2009-01-T2w.nii.gz -r KKI2009-01-MPRAGE_LR_MonoSRReCNN3D.nii.gz -m caffe_model/MultiSRReCNN3D_10Layers_IsoScalex2.caffemodel -n caffe_model/MultiSRReCNN3D_10L_deploy.prototxt
+```
+t : testing LR image
+
+f : HR reference image
+
+r : SR image result
+
+m : trained parameters of network stored in caffemodel file
+
+n : deploy network
+
+Other arguments see : 
+```
+python demo_multiSRReCNN3D.py -h
 ```
