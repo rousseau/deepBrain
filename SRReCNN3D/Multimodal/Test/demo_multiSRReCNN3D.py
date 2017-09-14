@@ -120,7 +120,7 @@ if __name__ == '__main__':
     parser.add_argument('-r', '--result', help='Estimated high-resolution image filename (required)', type=str, action='append', required = True)
     parser.add_argument('-m', '--caffemodel', help='Name of caffe model (required)', type=str, required = True)
     parser.add_argument('-s', '--scale', help='Scale factor (default = 2,2,2)', type=str, default='2,2,2')
-    parser.add_argument('-l', '--layers', help='Layer number of network (default = 20)', type=int, default=20)
+    parser.add_argument('-l', '--layers', help='Layer number of network (default = 10)', type=int, default=10)
     parser.add_argument('-n', '--netdeploy', help='Name of train/test net protocol (default = SRCNN3D_deploy.prototxt)', type=str, default='SRCNN3D_deploy.prototxt')
     parser.add_argument('--order', help='Order of spline interpolation (default=3) ', type=int, default=3)
     parser.add_argument('--residual', help='Using residual (Skip Connection) or None (default=True)', type=str, default='True')
