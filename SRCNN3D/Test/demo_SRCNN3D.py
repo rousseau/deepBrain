@@ -174,7 +174,7 @@ if __name__ == '__main__':
     parser.add_argument('-s', '--scale', help='Scale factor (default = 2,2,2)', type=str, default='2,2,2')
     parser.add_argument('-n', '--netdeploy', help='Name of train/test net protocol (default = SRCNN3D_deploy.prototxt)', type=str, default='SRCNN3D_deploy.prototxt')
     parser.add_argument('--order', help='Order of spline interpolation (default=3) ', type=int, default=3)
-    parser.add_argument('-g', '--gpu', help='Using GPU : True or False (default=True) ', type=str, default=True)
+    parser.add_argument('-g', '--gpu', help='Using GPU : True or False (default=True) ', type=str, default='True')
      
     args = parser.parse_args()
     
