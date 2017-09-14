@@ -43,7 +43,7 @@ def SRCNN3D_CPU(DeployNet,caffemodel,InterpolatedImage,layers=3):
         DeployNet : text file,
             file to retrive training parameters of Caffe
         caffemodel : text file,
-            file where Caffe stored parameters of each iteration (or snapshot iteration)
+            file where Caffe stored parameters of each iteration
         layers : integer (default = 3)
             number of layers of CNN
         InterpolatedImage : 3d array
@@ -197,6 +197,7 @@ if __name__ == '__main__':
         print 'Processing testing image : ', TestFile 
         TestNifti = sitk.ReadImage(TestFile)
         TestImage = np.swapaxes(sitk.GetArrayFromImage(TestNifti),0,2).astype('float32')
+        TestImageMinValue = float(np.min(TestImage))
         TestImageMaxValue = float(np.max(TestImage))
         TestImageNorm = TestImage/TestImageMaxValue 
         
@@ -224,8 +225,14 @@ if __name__ == '__main__':
         NewDirection = TestNifti.GetDirection()
         
         EstimatedHRImageInverseNorm = EstimatedHRImage*TestImageMaxValue
+        EstimatedHRImageInverseNorm[EstimatedHRImageInverseNorm <= TestImageMinValue] = TestImageMinValue    # Clear negative value
         OutputImage = sitk.GetImageFromArray(np.swapaxes(EstimatedHRImageInverseNorm,0,2))
         OutputImage.SetSpacing(NewSpacing)
         OutputImage.SetOrigin(NewOrigin)
         OutputImage.SetDirection(NewDirection)
+        
+        # Save result
+        OutFile = args.result[i]
+        print 'SR image resust  : ', OutFile 
         sitk.WriteImage(OutputImage,OutFile)
+
