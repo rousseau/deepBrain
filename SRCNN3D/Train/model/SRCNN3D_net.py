@@ -63,7 +63,7 @@ def SRCNN3D_deploy(netname, deployname):
     # =========== Writing SRCNN3D deploy =================
     # Read content of Net and remove a part
     with open(netname) as f:
-        contentNet = f.read()[180:-1]
+        contentNet = f.read()[180:-284]
      
     with open(deployname, "w") as f1:
         f1.write(""" # This file is to deploy the parameters of SRCNN3D_net without reading HDF5 files
