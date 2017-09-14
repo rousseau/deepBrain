@@ -24,7 +24,7 @@ h5py
 
 [cudnn](https://developer.nvidia.com/cudnn)
 
-### 3. Monomodal
+### 3. Monomodal brain MRI SR
 
 #### a) Testing
 
@@ -58,4 +58,13 @@ python demo_monoSRReCNN3D.py -h
 ```
 
 
+### 4. Multimodal brain MRI SR
 
+#### a) Testing
+
+Testing multimodal 10-layers residual network (Multimodal 10L-ReCNN) with isotropic scale factor of 2 for brain MRI super-resolution and using a (registered) HR reference image.
+
+```
+cd Multimodal/Test
+python demo_multiSRReCNN3D.py -t ($Dataset)/KKI2009-01-MPRAGE_LR.nii.gz -f ($Dataset)/KKI2009-01-T2w.nii.gz -r KKI2009-01-MPRAGE_LR_MonoSRReCNN3D.nii.gz -m caffe_model/MultiSRReCNN3D_10Layers_IsoScalex2.caffemodel -n caffe_model/MultiSRReCNN3D_10L_deploy.prototxt -l 10 -s 2,2,2
+```
