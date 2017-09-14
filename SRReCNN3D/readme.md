@@ -62,7 +62,7 @@ python demo_monoSRReCNN3D.py -h
 
 #### a) Testing
 
-Testing multimodal 10-layers residual network (Multimodal 10L-ReCNN) with isotropic scale factor of 2 for brain MRI super-resolution and using a (registered) HR reference image.
+Testing multimodal 10-layers residual network (Multimodal 10L-ReCNN) with isotropic scale factor of 2 for brain MRI super-resolution and using a (registered or not) HR reference image.
 
 ```
 cd Multimodal/Test
