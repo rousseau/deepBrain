@@ -60,7 +60,7 @@ python demo_SRCNN3D.py -h
 ```
 
 ### 5. Training
-#### Step 1 : Generating HDF5 files of training data
+#### Step 1 : Generating HDF5 files of training data and a text file of network protocol
 ```
 cd Train
 python generate_hdf5.py -f ($Dataset)/KKI2009-33-MPRAGE.nii.gz -o hdf5/KKI2009-33-MPRAGE.hdf5 -f ($Dataset)/KKI2009-34-MPRAGE.nii.gz -o hdf5/KKI2009-34-MPRAGE.hdf5 -s 2,2,2 -s 3,3,3
@@ -76,12 +76,12 @@ Other arguments see :
 python generate_hdf5.py -h
 ```
 
-#### Step 2 : Creating a solver txt file for Caffe
-We can edit directly the solver text file at *model/SRCNN3D_solver.prototxt*
+#### Step 2 : Creating a solver text file for Caffe
+We can modify the solver text file at *model/SRCNN3D_solver.prototxt*
 
 For further information about Caffe solver at [here](http://caffe.berkeleyvision.org/tutorial/solver.html)
 
-Or using this function:
+**Or** using this function:
 ```
 python generate_solver.py -l 0.0001 -s Adam
 ```
