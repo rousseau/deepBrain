@@ -57,6 +57,9 @@ Other arguments see :
 python demo_monoSRReCNN3D.py -h
 ```
 
+#### b) Training
+
+
 
 ### 4. Multimodal brain MRI SR
 
@@ -82,3 +85,5 @@ Other arguments see :
 ```
 python demo_multiSRReCNN3D.py -h
 ```
+
+#### b) Training
