@@ -36,22 +36,22 @@ import os
 os.environ["GLOG_minloglevel"] = "2"
 import caffe   
 
-def SRCNN3D_CPU(prototxt,caffemodel,InterpolatedImage,layers=3):
+def SRCNN3D_CPU(DeployNet,caffemodel,InterpolatedImage,layers=3):
     '''
         Caffe support data [N0ofFilter,Channel,Height,Width,Depth]
         -----------------
-        prototxt : text file,
+        DeployNet : text file,
             file to retrive training parameters of Caffe
         caffemodel : text file,
             file where Caffe stored parameters of each iteration (or snapshot iteration)
         layers : integer (default = 3)
             number of layers of CNN
-        im_b : 3d array
+        InterpolatedImage : 3d array
             interpolated low-resolution image (ILR image)
         
     '''
     # load directly CNN model parameters
-    net = caffe.Net(prototxt,caffemodel,caffe.TEST)
+    net = caffe.Net(DeployNet,caffemodel,caffe.TEST)
     
     # Size of interpolated low-resolution image (ILR image)
     [height, width, depth] = InterpolatedImage.shape
@@ -92,7 +92,7 @@ def SRCNN3D_CPU(prototxt,caffemodel,InterpolatedImage,layers=3):
     return EstimatedImage 
 
     
-def SRCNN3D_GPU(prototxt,caffemodel,InterpolatedImage):
+def SRCNN3D_GPU(DeployNet,caffemodel,InterpolatedImage):
     '''
         Caffe support data [N0ofFilter,Channel,Height,Width,Depth]
     ''' 
@@ -103,7 +103,7 @@ def SRCNN3D_GPU(prototxt,caffemodel,InterpolatedImage):
 
     # load CNN model parameters
     print ('Loading Caffemodel ....  ')
-    net = caffe.Net(prototxt,caffemodel,caffe.TEST)
+    net = caffe.Net(DeployNet,caffemodel,caffe.TEST)
     FilterWeight1 =  net.params['conv1'][0].data
     FilterBias1 =  net.params['conv1'][1].data
     FilterWeight2 =  net.params['conv2'][0].data
@@ -205,12 +205,12 @@ if __name__ == '__main__':
                                   zoom = Scale,
                                   order = args.order)  
         # SRCNN3D
-        prototxt = args.netdeploy
+        DeployNet = args.netdeploy
         caffemodel = args.caffemodel
         if args.gpu == 'True':
-            EstimatedHRImage = SRCNN3D_GPU(prototxt,caffemodel,InterpolatedImage)
+            EstimatedHRImage = SRCNN3D_GPU(DeployNet,caffemodel,InterpolatedImage)
         elif args.gpu == 'False':
-            EstimatedHRImage = SRCNN3D_CPU(prototxt,caffemodel,InterpolatedImage)
+            EstimatedHRImage = SRCNN3D_CPU(DeployNet,caffemodel,InterpolatedImage)
         else:
             raise AssertionError, 'Using GPU : True or False (default=True) !'
         # Save result
