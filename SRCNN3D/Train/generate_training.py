@@ -25,7 +25,7 @@
 """
 
 import numpy as np
-import nibabel as nib
+import SimpleITK as sitk
 import scipy.ndimage
 import sys
 from ast import literal_eval as make_tuple
@@ -114,10 +114,10 @@ if __name__ == '__main__':
         print '================================================================'
         print 'Processing image : ', ReferenceName
         # Read NIFTI
-        ReferenceNifti = nib.load(ReferenceName)
+        ReferenceNifti = sitk.ReadImage(ReferenceName)
         
         # Get data from NIFTI
-        ReferenceImage = ReferenceNifti.get_data()
+        ReferenceImage = np.swapaxes(sitk.GetArrayFromImage(ReferenceNifti),0,2).astype('float32')
         
         # Normalization 
         ReferenceImage =  imadjust3D(ReferenceImage,[0,1])    
