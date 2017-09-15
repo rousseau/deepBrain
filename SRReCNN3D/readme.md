@@ -25,7 +25,7 @@ h5py
 
 [cudnn](https://developer.nvidia.com/cudnn)
 
-### 3. Monomodal brain MRI SR
+### 3. Monomodal
 
 #### a) Testing
 
@@ -80,7 +80,7 @@ python generate_training.py -h
 ```
 
 
-### 4. Multimodal brain MRI SR
+### 4. Multimodal
 
 #### a) Testing
 
