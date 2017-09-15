@@ -81,10 +81,16 @@ Other arguments see :
 python generate_training.py -h
 ```
 
-**Optional :** After having HDF5 files, if we would like to modify network but do not want to generate them again.
+**Optional 1 :** After having HDF5 files, if we would like to modify network but do not want to generate them again.
 
 ```
 python generate_net.py -l 5 -k 3 --numkernel 64
+```
+
+**Optional 2 :** If we have LR images and corresponding HR images and we do not want to use this observation 
+
+```
+[](https://latex.codecogs.com/gif.latex?%5Ctextbf%7BY%7D%20%3D%20%5CTheta%20%5Ctextbf%7BX%7D%20&plus;%20%5Ctextbf%7BN%7D%20%3D%20D_%7B%5Cdownarrow%7D%20B%5Ctextbf%7BX%7D%20&plus;%20%5Ctextbf%7BN%7D)
 ```
 
 #### Step 2 : Creating a solver text file for Caffe
