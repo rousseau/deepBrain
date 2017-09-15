@@ -1,4 +1,4 @@
-# In progress
+# SRReCNN3D (In progress)
 
 
 ### Table of Contents
