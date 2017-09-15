@@ -77,15 +77,6 @@ input_shape {
   dim: 33
 }
 
-input: "label"
-input_shape {
-  dim: 1
-  dim: 1
-  dim: 21
-  dim: 21
-  dim: 21
-}
-
 """)
         f1.write(contentNet)
     return 1
