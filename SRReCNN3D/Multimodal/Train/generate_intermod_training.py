@@ -35,7 +35,7 @@ sys.path.insert(0, './model')
 from utils3d import shave3D, imadjust3D, modcrop3D
 from store2hdf5 import store2hdf53D
 from patches import array_to_patches
-from SRReCNN3D_net import SRReCNN3D_net, SRReCNN3D_deploy
+from InterSRReCNN3D_net import InterSRReCNN3D_net, InterSRReCNN3D_deploy
 
 import argparse
 
@@ -228,5 +228,5 @@ if __name__ == '__main__':
         
     # =========== Wrinting net ==================  
     with open(args.netname , 'w') as f:
-        f.write(str(SRReCNN3D_net(args.text, args.batch, args.layers, args.kernel, args.numkernel, padding, residual)))
-    SRReCNN3D_deploy(args.netname, args.deployname)
+        f.write(str(InterSRReCNN3D_net(args.text, args.batch, args.layers, args.kernel, args.numkernel, padding, residual)))
+    InterSRReCNN3D_deploy(args.netname, args.deployname)
