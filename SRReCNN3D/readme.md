@@ -72,7 +72,7 @@ s : scale factors
 
 l : number of layers
 
-k: size of 3d filter (k \times k \times k)
+k: size of 3d filter (k $$\times$$ k $$\times$$ k)
 
 Other arguments see : 
 ```
