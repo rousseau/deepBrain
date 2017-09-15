@@ -93,9 +93,13 @@ python generate_net.py -l 5 -k 3 --numkernel 64
 ![](https://latex.codecogs.com/gif.latex?%5Ctextbf%7BY%7D%20%3D%20%5CTheta%20%5Ctextbf%7BX%7D%20&plus;%20%5Ctextbf%7BN%7D%20%3D%20D_%7B%5Cdownarrow%7D%20B%5Ctextbf%7BX%7D%20&plus;%20%5Ctextbf%7BN%7D)
 
 where :
+
 Y : observed LR image
+
 X : HR image
+
 ![](https://latex.codecogs.com/gif.latex?D_%7B%5Cdownarrow%7D) : downscaling operator
+
 B : blurring filter
 
 We can use this function to generating HDF5 files and network protocol. Of course, this function can be used for other tasks using CNNs.
@@ -104,11 +108,15 @@ We can use this function to generating HDF5 files and network protocol. Of cours
 python generate_training_free.py -f ($Dataset)/KKI2009-33-MPRAGE.nii.gz -i ($Dataset)/KKI2009-33-MPRAGE_LR.nii.gz -o hdf5/KKI2009-33-MPRAGE.hdf5 
 
 ```
+
 f : label HR image
+
 i : input LR image
+
 o : HDF5 file which contains the patches of HR reference image
 
 Other arguments see : 
+
 ```
 python generate_training_free.py -h
 ```
