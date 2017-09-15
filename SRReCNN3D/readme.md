@@ -74,6 +74,8 @@ l : number of layers
 
 k: size of 3d filter ![](https://latex.codecogs.com/gif.latex?k%20%5Ctimes%20k%20%5Ctimes%20k)
 
+numkernel : number of filters
+
 Other arguments see : 
 ```
 python generate_training.py -h
