@@ -91,6 +91,7 @@ s : optimization method
 
 #### Step 3 : Training network using Caffe
 ```
+mkdir caffe_model
 caffe train --solver model/SRCNN3D_solver.prototxt
 ```
 
