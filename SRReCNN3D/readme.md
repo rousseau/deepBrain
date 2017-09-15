@@ -134,6 +134,36 @@ python demo_multiSRReCNN3D.py -h
 
 #### b) Training
 
+##### Step 1 : Generating HDF5 files of training data and a text file of network protocol
+```
+cd Monomodal/Train
+python generate_intermod_training.py -f ($Dataset)/KKI2009-33-MPRAGE.nii.gz -i ($Dataset)/KKI2009-33-T2w.nii.gz -o hdf5/KKI2009-33-MPRAGE.hdf5 -f ($Dataset)/KKI2009-34-MPRAGE.nii.gz -i ($Dataset)/KKI2009-34-T2w.nii.gz -o hdf5/KKI2009-34-MPRAGE.hdf5 -s 2,2,2 -s 3,3,3 -l 10 -k 3 --numkernel 32
+```
+f : HR reference image (ex T1-weighted MRI)
+
+i : Intermodality HR reference image (ex T2-weighted MRI)
+
+o : HDF5 file which contains the patches of HR reference image
+
+s : scale factors
+
+l : number of layers
+
+k: size of 3d filter ![](https://latex.codecogs.com/gif.latex?k%20%5Ctimes%20k%20%5Ctimes%20k)
+
+numkernel : number of filters
+
+Other arguments see : 
+```
+python generate_intermod_training.py -h
+```
+
+**Optional :** After having HDF5 files, if we would like to modify network but do not want to generate them again.
+
+```
+python generate_net.py -l 5 -k 3 --numkernel 64
+```
+
 
 #### Step 2 : Creating a solver text file for Caffe
 We can modify the solver text file at *model/SRReCNN3D_solver.prototxt*
