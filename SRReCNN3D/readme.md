@@ -61,7 +61,7 @@ python demo_monoSRReCNN3D.py -h
 #### b) Training
 ##### Step 1 : Generating HDF5 files of training data and a text file of network protocol
 ```
-cd Monomodal/Test
+cd Monomodal/Train
 python generate_training.py -f ($Dataset)/KKI2009-33-MPRAGE.nii.gz -o hdf5/KKI2009-33-MPRAGE.hdf5 -f ($Dataset)/KKI2009-34-MPRAGE.nii.gz -o hdf5/KKI2009-34-MPRAGE.hdf5 -s 2,2,2 -s 3,3,3 -l 10 -k 3 --numkernel 32
 ```
 f : HR reference image
@@ -94,7 +94,7 @@ For further information about Caffe solver at [here](http://caffe.berkeleyvision
 
 **Or** using this function:
 ```
-python generate_solver.py -l 0.0001 -s Adam
+python generate_solver.py -l 0.001 -s Adam
 ```
 l : learning rate
 
@@ -133,3 +133,23 @@ python demo_multiSRReCNN3D.py -h
 ```
 
 #### b) Training
+
+
+#### Step 2 : Creating a solver text file for Caffe
+We can modify the solver text file at *model/SRReCNN3D_solver.prototxt*
+
+For further information about Caffe solver at [here](http://caffe.berkeleyvision.org/tutorial/solver.html)
+
+**Or** using this function:
+```
+python generate_solver.py -l 0.001 -s Adam
+```
+l : learning rate
+
+s : optimization method
+
+#### Step 3 : Training network using Caffe
+```
+mkdir caffe_model
+caffe train --solver model/SRReCNN3D_solver.prototxt
+```
