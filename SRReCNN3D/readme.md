@@ -4,8 +4,8 @@
 ### Table of Contents
 1. [Introduction](#introduction)
 1. [Dependencies](#dependencies)
-1. [Monomodal brain MRI SR](#Monomodal brain MRI SR)
-1. [Multimodal brain MRI SR](#Multimodal brain MRI SR)
+1. [Monomodal brain MRI SR](#monomodal)
+1. [Multimodal brain MRI SR](#multimodal)
 
 ### 1. Introduction
 This repository contains the SRReCNN3D model for brain MRI super-resolution
