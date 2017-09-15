@@ -81,7 +81,8 @@ Other arguments see :
 python generate_training.py -h
 ```
 
-**Optional : ** After having HDF5 files, if we would like to modify network but do not want to generate them again.
+**Optional :** After having HDF5 files, if we would like to modify network but do not want to generate them again.
+
 ```
 python generate_net.py -l 5 -k 3 --numkernel 64
 ```
