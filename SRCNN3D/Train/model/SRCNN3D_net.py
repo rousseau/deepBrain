@@ -60,21 +60,43 @@ def SRCNN3D(hdf5name, batch_size, kernel ):
     return n.to_proto()
 
 def SRCNN3D_deploy(netname, deployname):
-    # =========== Writing SRCNN3D deploy =================
+    # =========== Writing SRReCNN3D_net deploy =================
     # Read content of Net and remove a part
+    findStringBegin ="""
+layer {
+  name: "conv1"
+  type: "Convolution"
+  bottom: "data"
+  top: "conv1"
+"""    
+    findStringEnd ="""
+layer {
+  name: "label_flat"
+  type: "Flatten"
+  bottom: "label"
+  top: "label_flat"
+}
+layer {
+  name: "loss"
+  type: "EuclideanLoss"
+  bottom: "conv3_flat"
+  bottom: "label_flat"
+  top: "loss"
+}
+"""
     with open(netname) as f:
-        contentNet = f.read()[180:-284]
-     
+        contentNet = f.read()
+        contentNet = contentNet[contentNet.find(findStringBegin):contentNet.find(findStringEnd)] # Removing unnecessary string
     with open(deployname, "w") as f1:
         f1.write(""" # This file is to deploy the parameters of SRCNN3D_net without reading HDF5 files
-name: 'SRCNN3D'
+name: 'SRReCNN3D_net'
 input: "data"
 input_shape {
   dim: 1
   dim: 1
-  dim: 33
-  dim: 33
-  dim: 33
+  dim: 21
+  dim: 21
+  dim: 21
 }
 
 """)
