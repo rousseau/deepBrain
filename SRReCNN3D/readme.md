@@ -4,7 +4,8 @@
 ### Table of Contents
 1. [Introduction](#introduction)
 1. [Dependencies](#dependencies)
-1. [Testing](#testing)
+1. [Monomodal brain MRI SR](#Monomodal brain MRI SR)
+1. [Multimodal brain MRI SR](#Multimodal brain MRI SR)
 
 ### 1. Introduction
 This repository contains the SRReCNN3D model for brain MRI super-resolution
@@ -58,7 +59,25 @@ python demo_monoSRReCNN3D.py -h
 ```
 
 #### b) Training
+##### Step 1 : Generating HDF5 files of training data and a text file of network protocol
+```
+cd Monomodal/Test
+python generate_training.py -f ($Dataset)/KKI2009-33-MPRAGE.nii.gz -o hdf5/KKI2009-33-MPRAGE.hdf5 -f ($Dataset)/KKI2009-34-MPRAGE.nii.gz -o hdf5/KKI2009-34-MPRAGE.hdf5 -s 2,2,2 -s 3,3,3 -l 10 -k 3 --numkernel 32
+```
+f : HR reference image
 
+o : HDF5 file which contains the patches of HR reference image
+
+s : scale factors
+
+l : number of layers
+
+k: size of 3d filter (k \times k \times k)
+
+Other arguments see : 
+```
+python generate_training.py -h
+```
 
 
 ### 4. Multimodal brain MRI SR
