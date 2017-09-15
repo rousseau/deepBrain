@@ -73,7 +73,7 @@ s : scale factors
 
 Other arguments see : 
 ```
-python generate_hdf5.py -h
+python generate_training.py -h
 ```
 
 #### Step 2 : Creating a solver text file for Caffe
