@@ -87,6 +87,26 @@ python generate_training.py -h
 python generate_net.py -l 5 -k 3 --numkernel 64
 ```
 
+#### Step 2 : Creating a solver text file for Caffe
+We can modify the solver text file at *model/SRReCNN3D_solver.prototxt*
+
+For further information about Caffe solver at [here](http://caffe.berkeleyvision.org/tutorial/solver.html)
+
+**Or** using this function:
+```
+python generate_solver.py -l 0.0001 -s Adam
+```
+l : learning rate
+
+s : optimization method
+
+#### Step 3 : Training network using Caffe
+```
+mkdir caffe_model
+caffe train --solver model/SRReCNN3D_solver.prototxt
+```
+
+
 ### 4. Multimodal
 
 #### a) Testing
