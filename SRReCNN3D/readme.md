@@ -2,7 +2,7 @@
 
 
 ### Table of Contents
-1. [Introduction](#introduction)
+0. [Introduction](#introduction)
 1. [Citation](#citation)
 1. [Dependencies](#dependencies)
 1. [Monomodal brain MRI SR](#monomodal)
