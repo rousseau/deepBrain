@@ -3,12 +3,25 @@
 
 ### Table of Contents
 1. [Introduction](#introduction)
+1. [Citation](#citation)
 1. [Dependencies](#dependencies)
 1. [Monomodal brain MRI SR](#monomodal)
 1. [Multimodal brain MRI SR](#multimodal)
 
-### 1. Introduction
+### 0. Introduction
 This repository contains the SRReCNN3D model for brain MRI super-resolution
+
+### 1. Citation
+
+If you use these models in your research, please cite:
+```
+@article{pham2017multi,
+  title={Multi-scale brain MRI super-resolution using deep 3D convolutional networks},
+  author={Pham, Chi-Hieu and Fablet, Ronan and Rousseau, Fran{\c{c}}ois},
+  journal={HAL preprint hal-01635455},
+  year={2017}
+}
+```
 
 ### 2. Dependencies
 
