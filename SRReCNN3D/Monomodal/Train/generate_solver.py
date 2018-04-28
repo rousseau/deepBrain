@@ -28,7 +28,7 @@ import argparse
 string_init = """ # The train/test net protocol buffer definition
 net: "model/SRReCNN3D_net.prototxt"
 test_initialization: false   # We do not have testing phase during training
-base_lr: 0.001
+base_lr: 0.0001
 momentum: 0.9
 momentum2: 0.999
 weight_decay: 0
@@ -61,7 +61,7 @@ if __name__ == '__main__':
     string = string_init
     string = string.replace('model/SRReCNN3D_net.prototxt',args.net)
     string = string.replace('type: "Adam"','type: "'+args.solver+'"')
-    string = string.replace('base_lr: 0.001','base_lr: '+args.learningrate)
+    string = string.replace('base_lr: 0.0001','base_lr: '+args.learningrate)
     string = string.replace('momentum: 0.9','momentum: ' + args.momentum)
     string = string.replace('momentum2: 0.999','momentum2: ' + args.momentum2)
     string = string.replace('weight_decay: 0','weight_decay: ' + args.weightdecay)
