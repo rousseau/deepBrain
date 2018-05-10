@@ -88,7 +88,7 @@ def SRCNN3D_CPU(DeployNet,caffemodel,InterpolatedImage,layers=3):
             InputDataFilter = OutputFilter
     
     stdout.write("\n") 
-    EstimatedImage = OutputFilter[0,:,:,:]
+    EstimatedImage = OutputWeightFilter[0,:,:,:]
     return EstimatedImage 
 
     
