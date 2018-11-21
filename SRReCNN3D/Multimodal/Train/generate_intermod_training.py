@@ -226,7 +226,7 @@ if __name__ == '__main__':
         OutFile.write(hdf5name)
         OutFile.write('\n')
         
-    # =========== Wrinting net ==================  
+    # =========== Generating net ==================  
     with open(args.netname , 'w') as f:
         f.write(str(InterSRReCNN3D_net(args.text, args.batch, args.layers, args.kernel, args.numkernel, padding, residual)))
     InterSRReCNN3D_deploy(args.netname, args.deployname)
