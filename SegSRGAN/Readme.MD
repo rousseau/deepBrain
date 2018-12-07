@@ -92,7 +92,7 @@ python SegSRGAN_test.py
 ##### Step 1 : Generating HDF5 files of training data and a text file
 ```
 mkdir hdf5
-python SegSRGAN_generate_training_data.py -f ($Dataset)/1_T2w_restore.nii.gz -c ($Dataset)/1_ribbon_cortex.nii.gz -o hdf5/1_T2w_restore.hdf5 -f ($Dataset)/2_T2w_restore.nii.gz -o hdf5/2_T2w_restore.hdf5 -n 0.4464,0.4464,3
+python SegSRGAN_generate_training_data.py -f ($Dataset)/1_T2w_restore.nii.gz -c ($Dataset)/1_ribbon_cortex.nii.gz -o hdf5/1_T2w_restore.hdf5 -f ($Dataset)/2_T2w_restore.nii.gz -c ($Dataset)/2_ribbon_cortex.nii.gz -o hdf5/2_T2w_restore.hdf5 -n 0.4464,0.4464,3
 ```
 f : HR reference image
 
