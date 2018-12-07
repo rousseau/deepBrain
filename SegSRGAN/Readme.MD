@@ -9,7 +9,7 @@
 1. [SegSRGAN](#SegSRGAN)
 
 ### 0. Introduction
-This repository contains the SegSRGAN and SRReCNN3D model for brain MRI super-resolution. This model can be applied to in-vivo clinical low-resolution data.
+This repository contains the SRReCNN3D network for brain MRI super-resolution and the SegSRGAN network for simultaneous super-resolution and segmentation using a generative adversarial network. These models can be applied to clinical low-resolution data.
 
 ### 1. Citation
 
