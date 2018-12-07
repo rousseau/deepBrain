@@ -53,7 +53,7 @@ f : HR reference image
 
 o : HDF5 file which contains the patches of HR reference image
 
-n : new low resolution (ex: 0.4464x0.4464x3 mm)
+n : simulated low resolution (ex: 0.4464x0.4464x3 mm)
 
 Other arguments see : 
 ```
@@ -100,7 +100,7 @@ c : HR reference cortex segmentation
 
 o : HDF5 file which contains the patches of HR reference image
 
-n : new low resolution (ex: 0.4464x0.4464x3 mm)
+n : simulated low resolution (ex: 0.4464x0.4464x3 mm)
 
 Other arguments see : 
 ```
