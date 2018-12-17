@@ -1,11 +1,11 @@
-# SegSRGAN (In progress)
+# UnSynGAN (In progress)
 
 
 ### Table of Contents
 0. [Introduction](#introduction)
 1. [Citation](#citation)
 1. [Dependencies](#dependencies)
-1. [SegSRGAN](#SegSRGAN)
+1. [UnSynGAN](# UnSynGAN)
 
 ### 0. Introduction
 This repository contains the unsupervised MRI tissu contrast synthesis using generative adversarial networks
