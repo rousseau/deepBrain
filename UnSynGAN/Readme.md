@@ -5,10 +5,10 @@
 0. [Introduction](#introduction)
 1. [Citation](#citation)
 1. [Dependencies](#dependencies)
-1. [UnSynGAN](# UnSynGAN)
+1. [UnSynGAN](#UnSynGAN)
 
 ### 0. Introduction
-This repository contains the unsupervised MRI tissu contrast synthesis using generative adversarial networks
+This repository contains unsupervised MRI tissue contrast synthesis using generative adversarial networks
 
 ### 1. Citation
 My thesis : Deep learning for image super-resolution and segmentation.
@@ -25,11 +25,11 @@ http://www.theses.fr/s201653
 
 h5py
 
-### 3. SegSRGAN
+### 3. UnSynGAN
 
 #### a) Testing
 
-Testing monomodal 20-layers residual network (20L-SRReCNN3D) for low-resolution image with the resolution of 0.4464x0.4464x3 mm in order to generate isotropic SR image of 0.5x0.5x0.5 mm
+Testing
 
 ```
 python UnSynGAN_test.py -t /home/chpham/these/data/NAMIC/NAMIC_T1T2/masked/T1/test/01011-t1w_masked.nii.gz -o 01011-t1w_masked_toT2.nii.gz.nii.gz -w weights/UnSynGAN --T1toT2 True
