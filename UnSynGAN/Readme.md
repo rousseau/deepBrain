@@ -55,10 +55,12 @@ python generate_training_data.py -1 /home/chpham/these/data/dHCP_ISBI2019/train/
 
 ```
 1 : reference T1w image
-o1 : HDF5 file which contains the patches of reference T1w image
+
+o1 : HDF5 file which contains the patches of the reference T1w image
 
 2 : reference T2w image
-o2 : HDF5 file which contains the patches of reference T2w image
+
+o2 : HDF5 file which contains the patches of the reference T2w image
 
 Other arguments see : 
 ```
