@@ -66,10 +66,10 @@ python generate_training_data.py
 ```
 ##### Step 2 : Training networks
 ```
-python USGAN_train.py
+python UnSynGAN_train
 ```
 Other arguments see : 
 ```
-python USGAN_train.py -h
+python UnSynGAN_train -h
 ```
 
