@@ -13,7 +13,7 @@ This repository contains the SRReCNN3D network for brain MRI super-resolution an
 
 ### 1. Citation
 
-'''
+```
 @inproceedings{pham:hal-01895163,
   TITLE = {{Simultaneous super-resolution and segmentation using a generative adversarial network: Application to neonatal brain MRI}},
   AUTHOR = {Pham, Chi-Hieu and Tor-D{\'i}ez, Carlos and Meunier, H{\'e}l{\`e}ne and Bednarek, Nathalie and Fablet, Ronan and Passat, Nicolas and Rousseau, Fran{\c c}ois},
@@ -26,7 +26,7 @@ This repository contains the SRReCNN3D network for brain MRI super-resolution an
   HAL_ID = {hal-01895163},
   HAL_VERSION = {v1},
 }
-'''
+```
 
 ### 2. Dependencies
 
