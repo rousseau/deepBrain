@@ -13,7 +13,20 @@ This repository contains the SRReCNN3D network for brain MRI super-resolution an
 
 ### 1. Citation
 
-Submitted to ISBI2019
+'''
+@inproceedings{pham:hal-01895163,
+  TITLE = {{Simultaneous super-resolution and segmentation using a generative adversarial network: Application to neonatal brain MRI}},
+  AUTHOR = {Pham, Chi-Hieu and Tor-D{\'i}ez, Carlos and Meunier, H{\'e}l{\`e}ne and Bednarek, Nathalie and Fablet, Ronan and Passat, Nicolas and Rousseau, Fran{\c c}ois},
+  URL = {https://hal.archives-ouvertes.fr/hal-01895163},
+  BOOKTITLE = {{International Symposium on Biomedical Imaging (ISBI)}},
+  ADDRESS = {Venice, Italy},
+  YEAR = {2019},
+  KEYWORDS = {segmentation ; super-resolution ; neonatal brain MRI ; 3D generative adversarial networks},
+  PDF = {https://hal.archives-ouvertes.fr/hal-01895163/file/Pham%20ISBI%202019.pdf},
+  HAL_ID = {hal-01895163},
+  HAL_VERSION = {v1},
+}
+'''
 
 ### 2. Dependencies
 
