@@ -106,8 +106,8 @@ class UnSynGAN_train(object):
                     fakeT2w, EmClassT2 = self.generator.predict([realT1w,classT2])
                     fakeT1w, EmClassT1 = self.generator.predict([realT2w,classT1])
                     epsilon = np.random.uniform(0, 1, size=(BatchSize,1,1,1,1))
-                    interpT1w = epsilon*fakeT2w + (1-epsilon)*fakeT1w
-                    interpT2w = epsilon*fakeT1w + (1-epsilon)*fakeT2w
+                    interpT1w = epsilon*fakeT2w + (1-epsilon)*realT1w
+                    interpT2w = epsilon*fakeT1w + (1-epsilon)*realT2w
                     
                     # Training
                     dis_loss1 = self.DiscriminatorModel.train_on_batch([realT1w,fakeT1w,interpT1w,EmClassT1],
