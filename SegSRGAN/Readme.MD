@@ -26,6 +26,14 @@ This repository contains the SRReCNN3D network for brain MRI super-resolution an
   HAL_ID = {hal-01895163},
   HAL_VERSION = {v1},
 }
+@article{delannoy2020segsrgan,
+  title={SegSRGAN: Super-resolution and segmentation using generative adversarial networks—Application to neonatal brain MRI},
+  author={Delannoy, Quentin and Pham, Chi-Hieu and Cazorla, Cl{\'e}ment and Tor-D{\'\i}ez, Carlos and Doll{\'e}, Guillaume and Meunier, H{\'e}l{\`e}ne and Bednarek, Nathalie and Fablet, Ronan and Passat, Nicolas and Rousseau, Fran{\c{c}}ois},
+  journal={Computers in Biology and Medicine},
+  pages={103755},
+  year={2020},
+  publisher={Elsevier}
+}
 ```
 
 ### 2. Dependencies
