@@ -1,4 +1,4 @@
-# SegSRGAN (In progress)
+# SegSRGAN: Super-resolution and segmentation using generative adversarial networks
 
 
 ### Table of Contents
